@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Note = require("../models/noteModel");
 
 //@description     Get or Search all notes
-//@route           GET /api/task?search=
+//@route           GET /api/note?search=
 //@access          Public
 const allNotes = asyncHandler(async (req, res) => {
     const keyword = req.query.search
@@ -15,8 +15,8 @@ const allNotes = asyncHandler(async (req, res) => {
     res.send(notes);
 });
 
-//@description     Register new task
-//@route           POST /api/task/
+//@description     Register new note
+//@route           POST /api/note/
 //@access          Public
 const createNote = asyncHandler(async (req, res) => {
 
@@ -48,8 +48,8 @@ const createNote = asyncHandler(async (req, res) => {
     }
 });
 
-//@description     Update existing task
-//@route           PUT /api/task/
+//@description     Update existing note
+//@route           PUT /api/note/
 //@access          Public
 const updateNote = asyncHandler(async (req, res) => {
     const { noteId, group, description, color } = req.body;
@@ -75,8 +75,8 @@ const updateNote = asyncHandler(async (req, res) => {
     }
 });
 
-//@description     Delete existing task
-//@route           DELETE /api/task/
+//@description     Delete existing note
+//@route           DELETE /api/note/
 //@access          Public
 const deleteNote = asyncHandler(async (req, res) => {
     const noteId = req.params.id;
