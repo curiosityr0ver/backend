@@ -89,4 +89,4 @@ const deleteNote = asyncHandler(async (req, res) => {
     }
 });
 
-module.exports = { allNotes, createNote, createNoteGroup, updateNote, deleteNote };
+module.exports = { allNotes, createNote, updateNote, deleteNote };
