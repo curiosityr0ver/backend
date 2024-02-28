@@ -3,6 +3,7 @@ const connectDB = require("./config/db");
 require("dotenv").config();
 const userRouter = require("./routes/userRoute");
 const taskRouter = require("./routes/taskRoute");
+const noteRouter = require("./routes/noteRoute");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 var cors = require('cors');
 const colors = require("colors");
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use('/api/user', userRouter);
 app.use('/api/task', taskRouter);
+app.use('/api/note', noteRouter);
 app.get('/', (req, res) => {
     res.send("Server is broadcasting APIs");
 });
